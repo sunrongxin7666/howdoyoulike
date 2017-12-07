@@ -19,7 +19,13 @@
 		<property name="prefix" value="/WEB-INF/jsp"/>
 		<property name="suffix" value=".jsp"/>
 	</bean>
-	
+
+
+	<!--文件上传解析器-->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="20000000"/>
+		<property name="defaultEncoding" value="uft-8"/>
+	</bean>
 	<!-- 自动扫描的包名 -->
 	<context:component-scan base-package="srx.awesome.code.hdyl.controller"/>
 </beans>
