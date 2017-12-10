@@ -2,6 +2,8 @@ package srx.awesome.code.hdyl.dao;
 
 import srx.awesome.code.hdyl.bean.Ad;
 
+import java.util.List;
+
 public interface AdMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,6 @@ public interface AdMapper {
     int updateByPrimaryKeySelective(Ad record);
 
     int updateByPrimaryKey(Ad record);
+
+    List<Ad> selectList();
 }

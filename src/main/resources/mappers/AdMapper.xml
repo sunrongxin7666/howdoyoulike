@@ -19,6 +19,14 @@
     from ad
     where id = #{id,jdbcType=INTEGER}
   </select>
+
+  <select id="selectList" resultMap="BaseResultMap" >
+    SELECT
+    <include refid="Base_Column_List"/>
+    from ad
+    ORDER BY id asc
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from ad
     where id = #{id,jdbcType=INTEGER}
