@@ -1,19 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
 	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE"/>
 	    <title>大众点评后台管理</title>
-	    <link href="/css/all.css" rel="stylesheet" type="text/css"/>
-	    <link href="/css/pop.css" rel="stylesheet" type="text/css"/>
-	    <link href="/css/index.css" rel="stylesheet" type="text/css"/>
-		<script type="text/javascript" src="/js/common/jquery-1.8.3.js"></script>
+	    <link href="${basePath}/css/all.css" rel="stylesheet" type="text/css"/>
+	    <link href="${basePath}/css/pop.css" rel="stylesheet" type="text/css"/>
+	    <link href="${basePath}/css/index.css" rel="stylesheet" type="text/css"/>
+	    <script src="${basePath}/js/common/jquery-1.8.3.js" type="text/javascript"></script>
+	    <script src="${basePath}/js/common/common.js" type="text/javascript"></script>
+	    <script src="${basePath}/js/common/json.js" type="text/javascript"></script>
+	    <script src="${basePath}/js/system/index.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<!-- 蒙版DIV -->
 		<div id="mengban" style="display:none"></div>
-		
+		<input type="hidden" id="basePath" value="${basePath}"/>
 		<div class="wishlistBox" style="display: none;left:550px;top:200px;">
 		    <div class="personRigTop persongBgimg" style="height:200px;width:480px;">
 		        <div class="persongRightTit" style="width:480px;">&nbsp;&nbsp;修改密码</div>
@@ -42,7 +44,7 @@
 		                    <tr>
 		                        <td class="left"></td>
 		                        <td class="submit">
-		                            <input id="submitVal" class="tabSub" value="提交" onclick="checkForm('http://127.0.0.1:8081/comment');" type="button"/>
+		                            <input id="submitVal" class="tabSub" value="提交" onclick="checkForm('${basePath}/comment');" type="button"/>
 		                            <input class="tabSub" value="关闭" onclick="closeDiv();" type="reset"/>
 		                        </td>
 		                    </tr>
@@ -53,7 +55,8 @@
 		    </div>
 		</div>
 		
-		<form method="post">
+		<form method="post" action="${basePath}/session" id="mainForm">
+			<input type="hidden" name="_method" value="DELETE"/>
 		    <div id="header">
 		        <div class="iheader">
 		            <div class="logo"><a href="#"><img src="" alt="" height="88px" width="99px"/></a> </div>
@@ -64,11 +67,10 @@
 							欢迎您！姓名[账号]&nbsp; 当前时间：2017年03月20日&nbsp;&nbsp;&nbsp;&nbsp;
 		                    <a href="javascript:void(0);" onclick="openAddDiv();">[修改密码]</a>
 		                    &nbsp;
-		                    <a href="javascript:void(0);" onclick="if(confirm('您确认退出系统?')){};">[退出系统]</a>
+		                    <a href="javascript:void(0);" onclick="if(confirm('您确认退出系统?')){$('#mainForm').submit();};">[退出系统]</a>
 		                </div>
 		            </div>
-		            <ul class="nav" id="mainMenuUl">
-		            	<li onclick="" class="on"><a><span>页面原型</span></a></li>
+		            <ul class="nav" id="menuDiv">
 		            </ul>
 		        </div>
 		    </div>
@@ -78,9 +80,8 @@
 		            <tr>
 		                <td class="leftTd" style="vertical-align:top" width="150">
 		                    <div class="left">
-		                        <div class="ileft" id="menuDiv">
-		                        	<h3 onclick="$('#mainPage').attr('src','/demo/initList');"><a>广告查询</a></h3>
-		                        	<h3 onclick="$('#mainPage').attr('src','/demo/initModify');"><a>广告修改</a></h3>
+		                        <div class="ileft" id="subMenuDiv">
+		                        	
 		                        </div>
 		                    </div>
 		                </td>
@@ -95,8 +96,6 @@
 		        </table>
 		    </div>
 		    <div id="footer">
-		        <div class="copyright">慕课网</div>
-		        <div class="flr">copyright &copy;</div>
 		    </div>
 		</form>
 	</body>

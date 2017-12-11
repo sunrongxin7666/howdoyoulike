@@ -1,11 +1,8 @@
 <%@ tag language="java" pageEncoding="UTF-8" %>
-<%--标签属性 当前页面页码--%>
 <%@ attribute type="org.imooc.bean.Page" name="page" required="true" %>
-<%--传入的方法名用于翻页后传回页码--%>
 <%@ attribute type="String" name="jsMethodName" required="true" %>
-<%--js脚本--%>
+
 <script type="text/javascript">
-	<%--传回页码--%>
 	function transCurrentPage(currentPage) {
 		var rule = /^[0-9]*[1-9][0-9]*$/;
 		if(!rule.test(currentPage)) {
