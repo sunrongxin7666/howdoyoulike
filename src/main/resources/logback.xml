@@ -8,6 +8,7 @@
 			<pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} %-5level[%thread]%logger{56}.%method\(\):%L -%msg%n</pattern>
 		</encoder>
 	</appender>
+
 	<!--文件输出 -->
 	<appender name="logfile" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <Encoding>UTF-8</Encoding>

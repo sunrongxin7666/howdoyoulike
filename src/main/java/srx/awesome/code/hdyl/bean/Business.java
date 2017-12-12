@@ -27,6 +27,8 @@ public class Business {
 
     private Integer commentTotalNum;
 
+    private Dic cityDic;
+
     public Business(Integer id, String imgFileName, String title, String subtitle, BigDecimal price, Integer distance, Integer number, String desc, String city, String category, Integer starTotalNum, Integer commentTotalNum) {
         this.id = id;
         this.imgFileName = imgFileName;

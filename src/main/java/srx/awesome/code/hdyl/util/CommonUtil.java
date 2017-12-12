@@ -1,12 +1,8 @@
 package srx.awesome.code.hdyl.util;
 
-import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
-
-import org.imooc.constant.SessionKeyConst;
-import org.imooc.dto.ActionDto;
 
 /**
  * 共通工具类.
@@ -54,20 +50,20 @@ public class CommonUtil {
 	 * @return true:包含，false：不包含
 	 */
 	public static boolean contains(HttpSession session,String url,String method) {
-		Object obj = session.getAttribute(SessionKeyConst.ACTION_INFO);
-		if(obj != null) {
-			@SuppressWarnings("unchecked")
-			List<ActionDto> dtoList = (List<ActionDto>)obj;
-			for(ActionDto actionDto : dtoList) {
-				if(!isEmpty(actionDto.getMethod()) && !actionDto.getMethod().equals(method)) {
-					continue;
-				}
-				if(!url.matches(actionDto.getUrl())) {
-					continue;
-				}
-				return true;
-			}
-		}
+//		Object obj = session.getAttribute(SessionKeyConst.ACTION_INFO);
+//		if(obj != null) {
+//			@SuppressWarnings("unchecked")
+//			List<ActionDto> dtoList = (List<ActionDto>)obj;
+//			for(ActionDto actionDto : dtoList) {
+//				if(!isEmpty(actionDto.getMethod()) && !actionDto.getMethod().equals(method)) {
+//					continue;
+//				}
+//				if(!url.matches(actionDto.getUrl())) {
+//					continue;
+//				}
+//				return true;
+//			}
+//		}
 		return false;
 	}
 }

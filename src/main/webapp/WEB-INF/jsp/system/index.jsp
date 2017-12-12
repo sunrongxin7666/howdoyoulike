@@ -4,13 +4,13 @@
 	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE"/>
 	    <title>大众点评后台管理</title>
-	    <link href="${basePath}/css/all.css" rel="stylesheet" type="text/css"/>
-	    <link href="${basePath}/css/pop.css" rel="stylesheet" type="text/css"/>
-	    <link href="${basePath}/css/index.css" rel="stylesheet" type="text/css"/>
-	    <script src="${basePath}/js/common/jquery-1.8.3.js" type="text/javascript"></script>
-	    <script src="${basePath}/js/common/common.js" type="text/javascript"></script>
-	    <script src="${basePath}/js/common/json.js" type="text/javascript"></script>
-	    <script src="${basePath}/js/system/index.js" type="text/javascript"></script>
+	    <link href="/css/all.css" rel="stylesheet" type="text/css"/>
+	    <link href="/css/pop.css" rel="stylesheet" type="text/css"/>
+	    <link href="/css/index.css" rel="stylesheet" type="text/css"/>
+	    <script src="/js/common/jquery-1.8.3.js" type="text/javascript"></script>
+	    <script src="/js/common/common.js" type="text/javascript"></script>
+	    <script src="/js/common/json.js" type="text/javascript"></script>
+	    <script src="/js/system/index.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<!-- 蒙版DIV -->
@@ -44,7 +44,7 @@
 		                    <tr>
 		                        <td class="left"></td>
 		                        <td class="submit">
-		                            <input id="submitVal" class="tabSub" value="提交" onclick="checkForm('${basePath}/comment');" type="button"/>
+		                            <input id="submitVal" class="tabSub" value="提交" onclick="checkForm('/comment');" type="button"/>
 		                            <input class="tabSub" value="关闭" onclick="closeDiv();" type="reset"/>
 		                        </td>
 		                    </tr>
@@ -55,7 +55,7 @@
 		    </div>
 		</div>
 		
-		<form method="post" action="${basePath}/session" id="mainForm">
+		<form method="post" action="/session" id="mainForm">
 			<input type="hidden" name="_method" value="DELETE"/>
 		    <div id="header">
 		        <div class="iheader">

@@ -13,6 +13,16 @@
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
 
+  <!--除了mvc之外的Bean-->
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:spring/root-context.xml</param-value>
+  </context-param>
+  <!--容器监听器-->
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+
   <filter>
     <filter-name>CharacterEncodingFilter</filter-name>
     <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -34,8 +44,8 @@
     <filter-name>MultipartFilter</filter-name>
     <filter-class>org.springframework.web.multipart.support.MultipartFilter</filter-class>
     <init-param>
-      <param-name>viewResolverBeanName</param-name>
-      <param-value>viewResolver</param-value>
+      <param-name>multipartResolverBeanName</param-name>
+      <param-value>multipartResolver</param-value>
     </init-param>
   </filter>
   <filter-mapping>
@@ -52,6 +62,7 @@
     <url-pattern>/*</url-pattern>
   </filter-mapping>
 
+  <!--SpringMVC-->
   <servlet>
     <servlet-name>spring</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>

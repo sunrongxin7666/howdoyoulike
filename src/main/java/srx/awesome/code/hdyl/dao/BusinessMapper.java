@@ -1,6 +1,7 @@
 package srx.awesome.code.hdyl.dao;
 
 import srx.awesome.code.hdyl.bean.Business;
+import srx.awesome.code.hdyl.bean.Dic;
 
 public interface BusinessMapper {
     int deleteByPrimaryKey(Integer id);
@@ -14,4 +15,6 @@ public interface BusinessMapper {
     int updateByPrimaryKeySelective(Business record);
 
     int updateByPrimaryKey(Business record);
+
+    Dic getBusinessCity(Integer BusinessId);
 }

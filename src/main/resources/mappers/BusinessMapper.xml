@@ -27,6 +27,12 @@
     from business
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="getBusinessCity" resultType="srx.awesome.code.hdyl.bean.Dic" parameterType="java.lang.Integer" >
+    select
+    <include refid="srx.awesome.code.hdyl.dao.DicMapper.Base_Column_List" />
+    from business
+    where id = #{id,jdbcType=INTEGER}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from business
     where id = #{id,jdbcType=INTEGER}
