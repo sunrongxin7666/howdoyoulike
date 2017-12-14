@@ -22,14 +22,8 @@
     star_total_num, comment_total_num
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from business
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <select id="getBusinessCity" resultType="srx.awesome.code.hdyl.bean.Dic" parameterType="java.lang.Integer" >
     select
-    <include refid="srx.awesome.code.hdyl.dao.DicMapper.Base_Column_List" />
+    <include refid="Base_Column_List" />
     from business
     where id = #{id,jdbcType=INTEGER}
   </select>

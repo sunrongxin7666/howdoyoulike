@@ -8,7 +8,7 @@ public class BusinessDto {
 
 	private Long id;
 	private String img;
-	private String mumber;
+	private String number;
 	private String title;
 	private String subTitle;
 	private String price;
@@ -24,12 +24,12 @@ public class BusinessDto {
 		this.img = img;
 	}
 
-	public String getMumber() {
-		return mumber;
+	public String getNumber() {
+		return number;
 	}
 
-	public void setMumber(String mumber) {
-		this.mumber = mumber;
+	public void setNumber(String number) {
+		this.number = number;
 	}
 
 	public String getTitle() {
